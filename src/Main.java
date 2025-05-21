@@ -1,5 +1,5 @@
 import model.Time;
-import model.Torneio;
+import model.Tabela;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -55,13 +55,13 @@ public class Main {
 
         System.out.print("\nDeseja sortear os confrontos aleatoriamente? (Sim/Não): ");
         String resposta = sc.nextLine();
-        if(resposta.equalsIgnoreCase("Sim")) {
+        if(resposta.equalsIgnoreCase("Sim")|resposta.equalsIgnoreCase("s")) {
             Collections.shuffle(times);
             System.out.println("\nTimes foram embaralhados para confrontos aleatórios!");
         }
 
         // TORNEIO
-        Torneio torneio = new Torneio(times);
+        Tabela torneio = new Tabela(times);
 
         while(!torneio.temCampeao()) {
             System.out.println("\n--- Confrontos do Torneio ---");
@@ -70,7 +70,46 @@ public class Main {
             torneio.jogarRodada(sc);
         }
 
-        System.out.println("\nCAMPEÃO: " + torneio.getCampeao().getNome());
+        System.out.println("O time campeão é...");
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(".");
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(".");
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(".");
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("O time " + torneio.getCampeao().getNome() + "!!!");
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         sc.close();
     }
 }

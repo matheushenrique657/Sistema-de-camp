@@ -31,14 +31,6 @@ public class Partida {
         return vencedor;
     }
 
-    @Override
-    public String toString() {
-        if (time2 == null) {
-            return time1 + " avança automaticamente.";
-        }
-        return time1 + " vs " + time2;
-    }
-
     public void exibirPartida() {
         if (time2 == null) {
             System.out.println(time1 + " avança automaticamente.");
